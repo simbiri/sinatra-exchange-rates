@@ -1,3 +1,12 @@
-<h1>Convert </h1>
+<h1>Convert <%=@cur_currency%></h1>
+
 <p>Go <a href="/">back</a> </p>
 
+<ul>
+<% @quotes.each do |key, value| %>
+<li>
+<a href=<%="/#{@cur_currency}/#{key.gsub(@cur_currency,"")}"%> 
+>Convert 1 <%= @cur_currency %> to <%=key.gsub(@cur_currency, "")%></a>
+</li>
+<%end%>
+</ul>
